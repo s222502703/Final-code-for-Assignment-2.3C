@@ -1,124 +1,97 @@
 <template>
-  <div class="page_container">
-    <div class="content">
-      <h1 class="heading"><b><u>Reactivity Fundamentals</u></b></h1>
-      <p>It enables the framework to automatically track and update changes to data, ensuring that the user interface (UI) remains 
-        synchronized with the underlying data. These fundamentals are essential for building dynamic and responsive applications in Vue.js
-        Overall, reactivity fundamentals in Vue.js simplify the process of building dynamic and interactive web applications by handling the synchronization of data and the UI automatically.
-         This simplifies the development process and leads to more maintainable code.
-
+    <div class="page_container">
+      <span id="heading">
+        <h1><b>Computed Properties</b></h1>
+      </span>
+      <p>
+        Computed properties in Vue.js are properties that automatically calculate
+        their values based on data changes and a defined computation logic. They
+        are read-only properties that depend on one or more data properties and
+        are used for performing calculations, transformations, or filtering of
+        data within Vue components. Computed properties are cached, which means
+        they are efficiently recalculated only when their dependencies change,
+        improving performance and ensuring that the UI remains in sync with the
+        underlying data.
       </p>
+      <br>
+      <div class="example_1">
+        
+        <p>Original Value: {{ value }}</p>
+        <p>Computed Value: {{ computedValue }}</p>
+        <p>Within this the actual value was 5. Then, that value if further changed by the help of computed properties
+            <br> {Refer to code for proper Understanding} </p>
+      </div>
+      <br>
+      <div class="example_2">
+        <textarea v-model="comment" placeholder="Write the words"></textarea>
+        <p>Characters: {{ commentLength }}/200</p>
+
+        <br>
+    <p>I have created the character counter by using th computed properties . For better understanding , refer to code in ComputedPropertiesView.vue</p>
+      </div>
+
+      <br>
+
+      <div class="example_3">
+    <p>Uppercase Text: {{ uppercase }}</p>
+</div>
     </div>
-    <br>
 
 
-    <div class="function">
-      <button @click="increment">Increment</button>
-      <button @click="decrement">Decrement</button>
-      <p>Count: {{ count }}</p>
-    </div>
-    <br> 
-    <div class="table_generator">
-      <h2>Generating Table of {{ factor }} with Reactivity Fundamentals</h2>
-      <button @click="generateTable">Generate Table</button>
-    </div>
-    <div class="result" v-if="showTable">
-      <table>
-        <tbody>
-          <tr v-for="i in 10" :key="i">
-            <td>2x{{ i }}</td>
-            <td>{{ multiplication(i) }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <footer>
-      <!-- Add footer content here -->
-      <p>More Information can be found at :- <a href="https://vuejs.org/guide/essentials/reactivity-fundamentals.html#deep-reactivity"> Click here...</a> </p>
-    </footer>
-  </div>
-</template>
+  </template>
+  
+  <script setup>
+  import { ref, computed } from 'vue';                                  //importing computed from vue
+  
+  const value = ref(5);
+  const comment = ref('');
+  const text= ref('This text is uppercased with the help of computed properties......')
+  
+  const computedValue = computed(() => {                                    //computed properties used
+    // This computed property depends on 'value'
+    return value.value * 2;
+  });
+  
+  const commentLength = computed(() => {                                            //computed properties used
+    // This computed property calculates the length of the comment
+    return comment.value.length;
+  });
 
-<script setup>                    /*<script setup> has been used here  */
-import { ref } from 'vue';    
+  const uppercase = computed(() => {                                                //computed properties used
+  return text.value.toUpperCase();
+});
 
-const count = ref(0);             /*ref() has beenused here  */
-const factor = ref(2);
-const showTable = ref(false);
+  </script>
+  
+  <style scoped>
+  .page_container {
+    background-color: lightsalmon;
+    width: 900px;
+    height: 800px;
+    padding: 5px;
+  }
+  #heading {
+    color: darkred;
+  }
+  .example_1{
+    background-color: steelblue;
+    color:lightcyan;
+    width:fit-content;
+    margin: auto;
+    padding: 5px;
+  }
 
-const increment = () => {
-  count.value++;
-};
+  .example_2{
+    background-color: darkblue;
+    color:lightcyan;
+    width:500px;
+    margin: auto;
+    padding: 5px;
 
-const decrement = () => {
-  count.value--;
-};
-
-const generateTable = () => {
-  showTable.value = !showTable.value;
-};
-
-const multiplication = (number) => {
-  return factor.value * number;
-};
-</script>
-
-<style scoped>
-.content {
-  border-bottom: 4px solid black;
-}
-
-.function {
-  background-color: burlywood;
-  color: tomato;
-  width: 500px;
-  text-align: center;
-}
-
-.heading {
-  color: darkred;
-}
-
-.table_generator {
-  text-align: center;
-  background-color: darkblue;
-  width: 800px;
-  color: white;
-  padding:10px;
-}
-
-.result {
-  text-align: center;
-  background-color: darkblue;
-  width: 800px;
-  color: white;
-  padding: 10px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  border: 1px solid white;
-  padding: 8px;
-  text-align: center;
-  color: white;
-}
-
-.page_container {
-  background-color: darkcyan;
-  width: 1000px;
-  height: 800px;
-  padding: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: grey;
-  color: white;
-}
-</style>
+  }
+  .example_3{
+    background-color: darkmagenta;
+    color:lightgray;
+  }
+  </style>
+  
