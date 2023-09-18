@@ -18,7 +18,7 @@
       <h2><u>Position Finder by Methods </u></h2>
       <div class="checker">
         <p>Move the mouse pointer over the box below:</p>
-        <div @mousemove="handleMouseMove">
+        <div @mousemove="MouseMove">
           <span>xPos: {{ xPos }}</span><br><span>yPos: {{ yPos }}</span>
         </div>
       </div>
@@ -37,11 +37,11 @@
       };
     },
     methods: { 
-      changeText() { 
+      changeText() {                                                            //method 1 has been used here 
         this.text = 'This text is written by methods !!!!';
       },
-      handleMouseMove(event) {
-        this.xPos = event.offsetX;
+      MouseMove(event) {
+        this.xPos = event.offsetX;                                        //method 2 has been used here 
         this.yPos = event.offsetY;
       },
     },
@@ -55,6 +55,8 @@
     color: red;
     text-align: center;
     height: 800px;
+    margin-left: 60px;
+    height: fit-content;
   }
   
   .content {
