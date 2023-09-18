@@ -8,7 +8,7 @@
       climate change are all ways to lessen its effects.
     </p>
 <br>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWSd_Y8R9a6px_twOE38p7u77e2pi0rMcIkOTj5z3pA&s" alt="global" height="600" width="900">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWSd_Y8R9a6px_twOE38p7u77e2pi0rMcIkOTj5z3pA&s" alt="global" height="600" width="800">
 <br>
 {{ extra_text }} <!-- This is the javascript with {{  }}-->
 </div>
@@ -62,9 +62,9 @@ changeHeading() {
 <style>
 .app {
   
-  top: 50px; 
-  height: auto;
-  width:auto;
+
+  margin-left: 80px;
+  width:900px;
   background-color: lightblue;
   font-family: Arial, sans-serif;
   margin: 100;
@@ -77,13 +77,15 @@ changeHeading() {
 
 .container {
   margin-top: 20px; /* Adjust the margin to separate the sections */
-  width: 1000px; /* Adjust the width as needed */
+  width: 900px; /* Adjust the width as needed */
   background-color: springgreen;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 5px;
   font-size: x-large;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto; /*Center the container horizontally */
+  margin-left: 80px; 
+  color:darkblue
  
   
 }
@@ -105,11 +107,16 @@ changeHeading() {
 }
 
 .font-size-changer {
-  margin-top: 20px;
+  /* margin: auto; */
+  width: 1000px;
+  margin-left: 80px; 
+ 
+
 }
 
 #fontSizeSelector {
   margin-left: 10px;
+  
 }
 
 </style>
