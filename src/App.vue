@@ -5,11 +5,29 @@
       <pre>
 <RouterLink to="/">Template Syntax</RouterLink>
 
-<RouterLink to="/Method"> Methods</RouterLink>
+<RouterLink to="/Method">Methods</RouterLink>
 
 <RouterLink to="/ReactivityFundamentals">Reactivity Fundamentals</RouterLink>
 
 <RouterLink to="/ComputedProperties">Computed Properties</RouterLink>
+
+<RouterLink to="/Classandstyle">Class and Style Bindings</RouterLink>
+
+<RouterLink to="/ListRendering">List Rendering</RouterLink>
+
+<RouterLink to="/EventHandling">Event Handling</RouterLink>
+
+<RouterLink to="/Forms">Forms Input Bindings</RouterLink>
+
+<RouterLink to="/Watchers">Watchers</RouterLink>
+
+<RouterLink to="/Components">Components</RouterLink>
+
+<RouterLink to="/Router">Router</RouterLink>
+
+
+
+
 
 
       </pre>
