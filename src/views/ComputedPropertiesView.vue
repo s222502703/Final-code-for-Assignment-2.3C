@@ -26,26 +26,41 @@
         <textarea v-model="comment" placeholder="Write the words"></textarea>
         <p>Characters: {{ commentLength }}/200</p>
 
-        <br><p>I have created the character counter by using th computed properties . For better understanding , refer to code in ComputedPropertiesView.vue</p>
+        <br>
+    <p>I have created the character counter by using th computed properties . For better understanding , refer to code in ComputedPropertiesView.vue</p>
       </div>
+
+      <br>
+
+      <div class="example_3">
+    <p>Uppercase Text: {{ uppercase }}</p>
+</div>
     </div>
+
+
   </template>
   
   <script setup>
-  import { ref, computed } from 'vue';
+  import { ref, computed } from 'vue';                                  //importing computed from vue
   
   const value = ref(5);
   const comment = ref('');
+  const text= ref('This text is uppercased with the help of computed properties......')
   
-  const computedValue = computed(() => {
+  const computedValue = computed(() => {                                    //computed properties used
     // This computed property depends on 'value'
     return value.value * 2;
   });
   
-  const commentLength = computed(() => {
+  const commentLength = computed(() => {                                            //computed properties used
     // This computed property calculates the length of the comment
     return comment.value.length;
   });
+
+  const uppercase = computed(() => {                                                //computed properties used
+  return text.value.toUpperCase();
+});
+
   </script>
   
   <style scoped>
@@ -73,6 +88,10 @@
     margin: auto;
     padding: 5px;
 
+  }
+  .example_3{
+    background-color: darkmagenta;
+    color:lightgray;
   }
   </style>
   
